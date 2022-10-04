@@ -49,5 +49,17 @@ chmod 770 /ven
 chmod 770 /sec
 chmod 777 /publico
 
+echo "Atualizando sistema..."
+apt update
+apt upgrade -y
+
+echo "Instalando servidor Apache..."
+apt install unzip apache2 -y
+rm /var/www/html/*
+cd /var/www/html
+wget https://github.com/robsonraphael/Magic-Card/blob/main/index.html
+
+echo "Instalando servidor MySQL..."
+apt install mysql-8.0 -y
 
 echo "FIM...."
